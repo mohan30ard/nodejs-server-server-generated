@@ -1,0 +1,535 @@
+openapi: 3.0.0
+info:
+  title: Giftelle API
+  version: 1.0.0
+servers:
+- url: http://127.0.0.1:8000
+paths:
+  /api/users/user-addresses/:
+    get:
+      tags:
+      - default
+      summary: Get address
+      operationId: apiUsersUser_addressesGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Add Address
+      operationId: apiUsersUser_addressesPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                address_id: 1
+                user_id: 1
+                person_name: Alice Johnson
+                phone_number: "5551234567"
+                address_label: Home
+                street_address: 789 Food St
+                city: Toronto
+                state: "ON"
+                postal_code: M5V 2G3
+                country: Canada
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/user-addresses/1/:
+    get:
+      tags:
+      - default
+      summary: Get Address by Id
+      operationId: apiUsersUser_addresses1GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - default
+      summary: Update Address
+      operationId: apiUsersUser_addresses1PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ""
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - default
+      summary: Delete Address
+      operationId: apiUsersUser_addresses1DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/categories/:
+    get:
+      tags:
+      - default
+      summary: Get Categories
+      operationId: apiVendorsCategoriesGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Add Category
+      operationId: apiVendorsCategoriesPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                category_name: Bakery
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/categories/4/:
+    put:
+      tags:
+      - default
+      summary: Update Category
+      operationId: apiVendorsCategories4PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                category_name: Bakery
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/categories/2/:
+    delete:
+      tags:
+      - default
+      summary: Delete Category
+      operationId: apiVendorsCategories2DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/categories/1/:
+    get:
+      tags:
+      - default
+      summary: Get Category By ID
+      operationId: apiVendorsCategories1GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/user-order-items/1/:
+    get:
+      tags:
+      - default
+      summary: Get Order-items by Id
+      operationId: apiUsersUser_order_items1GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - default
+      summary: Update Order-item
+      operationId: apiUsersUser_order_items1PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ""
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - default
+      summary: Delete Order-item
+      operationId: apiUsersUser_order_items1DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/user-order-items/:
+    post:
+      tags:
+      - default
+      summary: Create Order-item
+      operationId: apiUsersUser_order_itemsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_item_id: 201
+                order: 1
+                product: 3
+                product_name: Whole Wheat Bread
+                product_description: Freshly baked whole wheat bread made with organic
+                  ingredients.
+                category: Bakery
+                quantity: 2
+                price_per_unit: 5.99
+                subtotal: 11.98
+                may_contain: Gluten
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/user-orders/:
+    get:
+      tags:
+      - default
+      summary: Get Orders
+      operationId: apiUsersUser_ordersGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Create Order
+      operationId: apiUsersUser_ordersPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_id: 101
+                user: 1
+                vendor: 1
+                total_amount: 15.98
+                net_product_amount: 11.98
+                delivery_charges: 3
+                tax: 1
+                other_charges: 0
+                address: 1
+                created_at: 2025-02-19T12:00:00Z
+                status: Pending
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/user-orders/1/:
+    get:
+      tags:
+      - default
+      summary: Get Order by Id
+      operationId: apiUsersUser_orders1GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - default
+      summary: Update Order
+      operationId: apiUsersUser_orders1PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_id: 1
+                total_amount: "20.98"
+                net_product_amount: "11.98"
+                delivery_charges: "3.00"
+                tax: "1.00"
+                other_charges: "0.00"
+                created_at: 2025-02-20T02:38:36.665123Z
+                updated_at: 2025-02-20T02:38:36.665178Z
+                status: Pending
+                user: 1
+                vendor: 1
+                address: 1
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - default
+      summary: Delete Order
+      operationId: apiUsersUser_orders1DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/products/:
+    get:
+      tags:
+      - default
+      summary: Get Products
+      operationId: apiVendorsProductsGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Add Product
+      operationId: apiVendorsProductsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_id: 1
+                product_name: Whole Wheat Bread
+                product_description: Freshly baked whole wheat bread made with organic
+                  ingredients.
+                price: 5.99
+                category: Bakery
+                order_lead_time: 2
+                max_allowable_order: 5
+                vendor_id: 1
+                unit: pieces
+                may_contain: Gluten
+                product_images: "[\"https://example.com/images/eggs.jpg\"]"
+                availability: Available
+                is_active: true
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/products/2/:
+    get:
+      tags:
+      - default
+      summary: Get Product by Id
+      operationId: apiVendorsProducts2GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/users/users/:
+    get:
+      tags:
+      - default
+      summary: Get Users
+      operationId: apiUsersUsersGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Register User
+      operationId: apiUsersUsersPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: user@example.com
+                password_hash: StrongPassword123
+                first_name: Jane
+                last_name: Doe
+                phone_number: "1234567890"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/vendors/:
+    get:
+      tags:
+      - default
+      summary: Get Vendors
+      operationId: apiVendorsVendorsGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Register Vendor
+      operationId: apiVendorsVendorsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                owner_first_name: John
+                owner_last_name: Doe
+                email: johndoe@example.com
+                password: securepassword
+                social_id: "123456"
+                business_name: Doe Enterprises
+                BN_number: BN123456
+                contact_no: "+1234567890"
+                street_address: 123 Main St
+                city: Toronto
+                province: "ON"
+                zip_code: M5A1A1
+                country: Canada
+                google_autocom_response: Google API Response
+                business_description: An amazing business
+                category: 1
+                soc_media:
+                  facebook: fb.com/doe
+                  instagram: insta.com/doe
+                doc_upload:
+                  business_license: license_url
+                logo: logo_url
+                banner: banner_url
+                operating_hours:
+                  Monday: 9am-5pm
+                  Tuesday: 9am-5pm
+                status: Pending
+                stripe_customer_id: stripe_123456
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/vendors/vendors/1/:
+    get:
+      tags:
+      - default
+      summary: Get Vendor by Id
+      operationId: apiVendorsVendors1GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - default
+      summary: Update Vendor
+      operationId: apiVendorsVendors1PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                owner_first_name: John
+                owner_last_name: Doe1
+                email: johndoe@example.com
+                password: securepassword
+                social_id: "123456"
+                business_name: Doe Enterprises
+                contact_no: "+1234567890"
+                street_address: 123 Main St
+                city: Toronto
+                province: "ON"
+                zip_code: M5A1A1
+                country: Canada
+                google_autocom_response: Google API Response
+                business_description: An amazing business
+                soc_media:
+                  facebook: fb.com/doe
+                  instagram: insta.com/doe
+                doc_upload:
+                  business_license: license_url
+                logo: logo_url
+                banner: banner_url
+                operating_hours:
+                  Monday: 9am-5pm
+                  Tuesday: 9am-5pm
+                status: Pending
+                created_at: 2025-02-15T05:53:32.422868Z
+                stripe_customer_id: stripe_123456
+                category: 1
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - default
+      summary: Delete Vendor
+      operationId: apiVendorsVendors1DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+components: {}
